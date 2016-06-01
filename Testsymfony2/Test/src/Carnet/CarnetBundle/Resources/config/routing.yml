@@ -1,0 +1,7 @@
+carnet_client:
+    resource: "@CarnetBundle/Resources/config/routing/client.yml"
+    prefix:   /client
+
+carnet_homepage:
+    path:     /
+    defaults: { _controller: CarnetBundle:Default:index }

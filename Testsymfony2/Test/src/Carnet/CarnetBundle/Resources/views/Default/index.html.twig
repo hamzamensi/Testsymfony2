@@ -1,0 +1,10 @@
+<center>
+<h1>Carnet d'adresse</h1>
+
+{% if app.user %}
+    <a href="{{ path('client_compte') }}">Mon profil</a> OU <a href="{{ path('fos_user_security_logout') }}">Se deconnecter</a>
+{% else %}
+    <a href="{{ path('fos_user_security_login') }}">Se Connecter</a> OU <a href="{{ path('fos_user_registration_register') }}">Creer un compte</a>
+{% endif %}
+
+</center>

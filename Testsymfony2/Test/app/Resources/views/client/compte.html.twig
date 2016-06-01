@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <center>
+
+        <h1>Mon Compte</h1>
+        <a href="{{ path('client_index') }}"><button>Afficher mes contacts</button></a>
+        <a href="{{ path('client_new') }}"><button>Ajouter un contact</button></a>
+        <a href="{{ path('client_edit',{'id':app.user.id}) }}"> <button>Modifier mes informations</button></a>
+
+    </center>
+{% endblock %}

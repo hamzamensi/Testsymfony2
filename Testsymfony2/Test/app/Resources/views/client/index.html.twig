@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <center>
+    <h1>Mes Contacts</h1>
+    <h4><a href="{{ path('client_new') }}">Ajouter un nouveau contact</a></h4>
+    <table border="1">
+        <thead>
+            <tr>
+
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
+                <th>Tel</th>
+                <th>Web</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+
+                <td>{{ contact.contact.nomClient }}</td>
+                <td>{{ contact.contact.prenomClient }}</td>
+                <td>{{ contact.contact.adresseClient }}</td>
+                <td>{{ contact.contact.telClient }}</td>
+                <td>{{ contact.contact.webClient }}</td>
+                <td>
+                    <ul>
+
+                        <li>
+                            <a href="{{ path('client_edit', { 'id': contact.contact.id }) }}">Modifier</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('client_supprimer', { 'id': contact.contact.id }) }}">Supprimer</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+
+        </li>
+    </ul>
+    </center>
+{% endblock %}
